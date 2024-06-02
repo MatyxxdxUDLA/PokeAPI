@@ -21,5 +21,11 @@ namespace PokeAPI.Servicios
             ResourceList resourcelist_pokemon = JsonConvert.DeserializeObject<ResourceList>(json);
             return resourcelist_pokemon.results;
         }
+        public async Task <CaracterisitcasPokemon> DevuelveCaracteristicasPokemon(string url)
+        {
+            string json = await _httpClient.GetStringAsync(url);
+            CaracterisitcasPokemon caracterisitcas = JsonConvert.DeserializeObject<CaracterisitcasPokemon>(json);
+            return caracterisitcas;
+        }
     }
 }

@@ -5,7 +5,7 @@
              Title="ListadoPokemon">
     <ScrollView>
         <VerticalStackLayout>
-            <ListView x:Name="PokemonList" ItemsSource="{Binding listadoPokemones}">
+            <ListView x:Name="PokemonList" ItemsSource="{Binding listadoPokemones}" ItemSelected="MuestraResumenPokemon">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -35,5 +35,4 @@
             </ListView>
         </VerticalStackLayout>
     </ScrollView>
-    
 </ContentPage>

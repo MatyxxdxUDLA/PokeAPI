@@ -21,4 +21,10 @@ public partial class ListadoPokemon : ContentPage
         listadoPokemones = await _poke_apis.DevuelveListadoPokemones();
 		PokemonList.ItemsSource = listadoPokemones;
     }
+    public void MuestraResumenPokemon(object sender, SelectedItemChangedEventArgs e)
+    {
+		PokemonInfo poke_info = (PokemonInfo)e.SelectedItem;
+		Navigation.PushAsync(new ResumenPokemon(poke_info.Url));
+    }
+
 }
